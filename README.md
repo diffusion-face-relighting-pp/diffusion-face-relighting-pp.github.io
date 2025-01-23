@@ -1,1 +1,1 @@
-# diffusion-face-relighting-pp
+# DiFaReli
