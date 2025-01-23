@@ -210,9 +210,6 @@
             truth! </li>
         </ol>
         <br>
-        <!-- While prior state-of-the-art methods can <em>add</em> new shadows into an input image, the challenging task of removing or altering existing shadows remains unsolved. We focus on and solve these in-the-wild challenges! 
-        <div style="text-align: center; padding-top: 10px">
-        <img class="teaser" src="./files/content/relit_cmp/cmp.jpg" style="width: 90%"> -->
         </div>
       </div>
     </div>
@@ -230,9 +227,6 @@
           the decoding will only affect the shading and not the person’s shape or identity. Our key idea is to leverage
           a conditional diffusion implicit model with a novel conditioning technique for this task and learn the complex
           light interactions implicitly via the DDIM trained solely on a 2D face dataset.
-
-          <!-- Our key idea is to use an off-the-shelf light estimator for encoding and a DDIM decoder that learns to disentangle the lighting information and model the complex lighting implicitly. This process can be trained solely on a 2D face dataset wihout any relit ground truth, 3D or lighting data, making it easier to scale and operate on challenging real-world scenarios. -->
-          <!-- The main challenge is how to disan Our key idea is to leverage a conditional diffusion implicit model (DDIM) with a novel conditioning technique to learn the complex light interactions implicitly.  -->
         </p>
         <p>
           In particular, we use off-the-shelf estimators (<a href="https://deca.is.tue.mpg.de/">DECA</a>, <a
@@ -258,7 +252,7 @@
 
   <hr class="divider">
   <div class="container" style="max-width: 930px;">
-    <div class="row">
+    <div class="row ">
       <div class="col-md-12">
         <h2> Relighting with Consistent Cast Shadows </h2>
         <p>
@@ -268,7 +262,15 @@
       </div>
     </div>
     <div class="container" style="width:130%;">
-      <div class="row">
+      <div class="show_when_small" style="text-align: center; color: red">
+        Open this website on a desktop to see more results!
+        <div class="row-gg g-0 justify-content-center d-flex align-items-center">
+          <video class="mx-auto d-block vidrot" height="320px" autoplay muted loop>
+            <source src="./files/new_content/fancy/grid0.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="row hide_when_small">
         <div class="slide-container swiper" style="margin-left: -125px;">
             <div style="max-width: auto; margin: auto">
               <div class="flex-container_cs">
@@ -348,14 +350,23 @@
     </div>
 
     <div class="container" style="width:130%;">
-      <div class="row">
+      <div class="show_when_small" style="text-align: center; color: red">
+        Open this website on a desktop to see more results!
+        <div class="row-gg g-0 justify-content-center d-flex align-items-center">
+          <img src="./files/new_content/compare_cs/grid0_inp.jpg" height="320px" style="margin-right: 2px;">
+          <video class="mx-auto d-block vidrot" height="320px" autoplay muted loop>
+            <source src="./files/new_content/compare_cs/grid0.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="row hide_when_small">
         <div class="slide-container swiper" style="margin-left: -125px;">
             <div style="max-width: auto; margin: auto">
               <div class="flex-container_cs">
                 <div class="grid-input">
                   <div class="label" style="padding-left: 100px;padding-right:65px">Input</div>
                 </div>
-                <!-- Second grid for the other labels -->
                 <div class="grid-labels">
                   <div class="label"><a href="https://github.com/andrewhou1/Shadow-Mask-Face-Relighting" style="color: black; text-decoration: none;">Hou et al. (2021)</a></div>
                   <div class="label"><a href="https://github.com/andrewhou1/GeomConsistentFR" style="color: black; text-decoration: none;">Hou et al. (2022)</a></div>
@@ -409,6 +420,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 
