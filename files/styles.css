@@ -1,23 +1,34 @@
 /* Container for text and shadow */
-.text-container {
+.text-container-shadow {
+    text-align: center;
     position: relative;
-    font-family: Arial, sans-serif;
+    background-color: transparent;
     font-size: 100px;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-weight:bolder;
     color: rgb(0, 0, 0);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+  background-color: white;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Shadow Styling */
-.shadow {
+.shadow-text {
     position: absolute;
-    top: 0px; /* Places shadow directly under the text */
-    left: 0;
-    color: rgba(0, 0, 0, 0.3);
+    top: 18.5px; /* Places shadow directly under the text */
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.5);
     transform-origin: bottom center; /* Ensures rotation happens from the top of the shadow */
     transform: rotateX(45deg) skewX(-20deg);
     z-index: -1;
-    filter: blur(3px);
+    filter: blur(2px);
     animation: shadowRotate 7s infinite alternate linear;
 }
 
