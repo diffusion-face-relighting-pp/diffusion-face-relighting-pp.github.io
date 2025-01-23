@@ -22,7 +22,7 @@ body{
 /* Shadow Styling */
 .shadow-text {
     position: absolute;
-    top: 18.5px; /* Places shadow directly under the text */
+    top: 17px; /* Places shadow directly under the text */
     background-color: transparent;
     color: rgba(0, 0, 0, 0.5);
     transform-origin: bottom center; /* Ensures rotation happens from the top of the shadow */

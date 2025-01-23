@@ -56,37 +56,52 @@
 </head>
 
 <body data-new-gr-c-s-check-loaded="14.1089.0" data-gr-ext-installed="">
- <div class="text-container-shadow">
-        <h1 style="font-weight: bold;">
-        <span class="shadow-text">DiFaReli++
-        <img
-          src="https://em-content.zobj.net/source/microsoft-teams/337/pinched-fingers_1f90c.png"
-          style="vertical-align:top;transform: scaleX(1);" width="25" alt="logo" 
-        />
-        <img
-          src="https://em-content.zobj.net/source/microsoft-teams/337/pinched-fingers_1f90c.png"
-          style="vertical-align:top;transform: scaleX(1);" width="25" alt="logo" 
-        />
-          : Diffusion Face Relighting</span>
-        DiFaReli++        
-        <img
-          src="https://em-content.zobj.net/source/microsoft-teams/337/pinched-fingers_1f90c.png"
-          style="vertical-align:top;transform: scaleX(1);" width="25" alt="logo" 
-        />
-        <img
-          src="https://em-content.zobj.net/source/microsoft-teams/337/pinched-fingers_1f90c.png"
-          style="vertical-align:top;transform: scaleX(1);" width="25" alt="logo" 
-        />
-        : Diffusion Face Relighting
-        </h1>
-    </div>
-    <div class="text-container-shadow" style="margin-top: -20px;">
-         <h1 style="font-weight: bold;">
-        <span class="shadow-text">with Consistent Cast Shadows</span>
-        with Consistent Cast Shadows
-        </h1>
-    </div>
 
+  <div class="show_when_small" style="text-align: center; color: red">
+          <h1 class="text-center textShineBlack" style="line-height: 1.2; font-weight: bold"> <b>
+        DiFaReli++
+        <img
+            src="https://em-content.zobj.net/source/microsoft-teams/337/pinched-fingers_1f90c.png"
+            style="vertical-align:top; " width="25" alt="logo" 
+        />
+        <img
+            src="https://em-content.zobj.net/source/microsoft-teams/337/pinched-fingers_1f90c.png"
+            style="vertical-align:top;transform: scaleX(1);" width="25" alt="logo" 
+        />
+        : Diffusion Face Relighting<br>with Consistent Cast Shadows</b></h1>
+  </div>
+  <div class="hide_when_small">
+  <div class="text-container-shadow">
+      <h1 style="font-weight: bold;">
+      <span class="shadow-text">DiFaReli++
+      <img
+        src="https://em-content.zobj.net/source/microsoft-teams/337/pinched-fingers_1f90c.png"
+        style="vertical-align:top;transform: scaleX(1);" width="25" alt="logo" 
+      />
+      <img
+        src="https://em-content.zobj.net/source/microsoft-teams/337/pinched-fingers_1f90c.png"
+        style="vertical-align:top;transform: scaleX(1);" width="25" alt="logo" 
+      />
+        : Diffusion Face Relighting</span>
+      DiFaReli++        
+      <img
+        src="https://em-content.zobj.net/source/microsoft-teams/337/pinched-fingers_1f90c.png"
+        style="vertical-align:top;transform: scaleX(1);" width="25" alt="logo" 
+      />
+      <img
+        src="https://em-content.zobj.net/source/microsoft-teams/337/pinched-fingers_1f90c.png"
+        style="vertical-align:top;transform: scaleX(1);" width="25" alt="logo" 
+      />
+      : Diffusion Face Relighting
+      </h1>
+  </div>
+  <div class="text-container-shadow" style="margin-top: -20px; margin-bottom: -20px;">
+        <h1 style="font-weight: bold;">
+      <span class="shadow-text">with Consistent Cast Shadows</span>
+      with Consistent Cast Shadows
+      </h1>
+  </div>
+  </div>
       <!-- <div class="text-container">
           <div class="shadow">DiFaReli++: Diffusion Face Relighting with Consistent Cast Shadows</div>
           <div class="main-text">DiFaReli++: Diffusion Face Relighting with Consistent Cast Shadows</div>
@@ -113,8 +128,7 @@
         /> -->
         <!-- : Diffusion Face Relighting<br>with Consistent Cast Shadows</b></h1> -->
     <!-- </div> -->
-    <div class="highlight-clean" style="padding-bottom: 10px;">
-    <div class="container" style="max-width: 1000px;">
+
 
     <div class="container" style="max-width: 900px;">
       <div class="row authors">
@@ -139,6 +153,9 @@
         </div>
       </div>
     </div>
+
+    <div class="highlight-clean" style="padding-bottom: 10px; margin-top:-50px">
+    <div class="container" style="max-width: 1000px;">
     <div class="row">
       <div class="col-md-12 text-center">
         <!-- <img class="teaser" src="./files/content/image/teaser-1.png" style="max-width: 1300px"> -->
@@ -161,80 +178,168 @@
 
     </div>
     </div>
-
-  <hr class="divider">
-  <div class="container" style="max-width: 900px;" id="sec_shadow">
+  <div class="container" style="max-width: 900px;">
     <div class="row">
       <div class="col-md-12">
-        <h2>Experiment Section V.D – Shadow Flag Condition</h2>
+        <h2>Abstract</h2>
         <p>
-          <!-- As mentioned in "Experiment Section V.D – Shadow Flag Condition" of our main paper, we demonstrate the same capability as DiFaReli in strengthening and attenuating cast shadows on the face. -->
-          As mentioned in main paper, we demonstrate the same capability as DiFaReli in strengthening and attenuating cast shadows on the face.
+          We introduce a novel approach to single-view face relighting in the wild, addressing challenges such as global illumination and cast shadows.
+          A common scheme in recent methods involves intrinsically decomposing an input image into 3D shape, albedo, and lighting, then recomposing it with the target lighting.
+          However, estimating these components is error-prone and requires many training examples with ground-truth lighting to generalize well.
+          Our work bypasses the need for accurate intrinsic estimation and can be trained solely on 2D images without any light stage data, relit pairs, multi-view images, or lighting ground truth. 
+          Our key idea is to leverage a conditional diffusion implicit model (DDIM) for decoding a disentangled light encoding along with other encodings related to 3D shape and facial identity inferred from off-the-shelf estimators.
+          We propose a novel conditioning technique that simplifies modeling the complex interaction between light and geometry. It uses a rendered shading reference along with a shadow map, inferred using a simple and effective technique, to spatially modulate the DDIM. 
+          Moreover, we propose a single-shot relighting framework that requires just one network pass, given pre-processed data, and even outperforms the teacher model across all metrics.
+          Our method realistically relights in-the-wild images with temporally consistent cast shadows under varying lighting conditions. We achieve state-of-the-art performance on the standard benchmark Multi-PIE and rank highest in user studies.
         </p>
       </div>
     </div>
-    <div class="col-sm">
-      <div class="show_when_small" style="text-align: center; color: red">
-        Open this website on a desktop to see animated results!
-      </div>
-      <div class="row justify-content-center hide_when_small">
-        <div class="col-md-auto">
-          <center>
-            <p style="font-size: small; margin-bottom: 0px;">
-              Move the slider to animate the results.
-            </p>
-          </center>
-          <div class="slider">
-            <div class="slider_circle">
-              <div class="slider_right"> </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-auto" style="padding-left: 0px;">
-          <button class="slider_toggle"><i class="fa fa-pause"></i></button>
-        </div>
-      </div>
-
-      <div class="slide-container swiper">
-        <div style="max-width: 640px; margin: auto">
-          <div class="flex-container justify-content-center">
-            <div class="label">
-              Softer
-            </div>
-            <div class="label">
-              <-- Shadows -->
-            </div>
-            <div class="label">
-              Stronger
-            </div>
-            <div class="label hide_when_small">
-              Animated
-            </div>
-          </div>
-        </div>
-
-        <div id="s2" class="slide-content">
-          <div class="card-wrapper swiper-wrapper inner-content">
-          </div>
-
-          <div class="swiper-button-next swiper-navBtn"></div>
-          <div class="swiper-button-prev swiper-navBtn"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </div>
   </div>
-
 
   <hr class="divider">
   <div class="container" style="max-width: 900px;">
     <div class="row">
       <div class="col-md-12">
-        <!-- <h2> Relighting under moving light conditiongs </h2> -->
+        <h2>Key distinctions</h2>
+        <ol>
+          <li>Solves highly challenging scenarios like cast shadows, strong highlights, unusual makeups, and facial
+            accessories.</li>
+          <li>Bypasses the need for <em>accurate</em> intrinsic estimation of 3D shape, albedo, or lighting, yet
+            produces realistic results.</li>
+          <li>Only requires 2D images to train. No need for any multiview images, relit pairs, 3D or lighting ground
+            truth! </li>
+        </ol>
+        <br>
+        <!-- While prior state-of-the-art methods can <em>add</em> new shadows into an input image, the challenging task of removing or altering existing shadows remains unsolved. We focus on and solve these in-the-wild challenges! 
+        <div style="text-align: center; padding-top: 10px">
+        <img class="teaser" src="./files/content/relit_cmp/cmp.jpg" style="width: 90%"> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <div class="container" style="max-width: 900px;">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Our pipeline</h2>
+        <p>
+          The general idea of our method is simple: we first encode an input image into a feature vector that
+          <em>disentangles</em> the lighting information from all other information in the image, then modify the
+          lighting information in the vector and decode it. The challenge here is how to disentangle it well enough that
+          the decoding will only affect the shading and not the person’s shape or identity. Our key idea is to leverage
+          a conditional diffusion implicit model with a novel conditioning technique for this task and learn the complex
+          light interactions implicitly via the DDIM trained solely on a 2D face dataset.
+
+          <!-- Our key idea is to use an off-the-shelf light estimator for encoding and a DDIM decoder that learns to disentangle the lighting information and model the complex lighting implicitly. This process can be trained solely on a 2D face dataset wihout any relit ground truth, 3D or lighting data, making it easier to scale and operate on challenging real-world scenarios. -->
+          <!-- The main challenge is how to disan Our key idea is to leverage a conditional diffusion implicit model (DDIM) with a novel conditioning technique to learn the complex light interactions implicitly.  -->
+        </p>
+        <p>
+          In particular, we use off-the-shelf estimators (<a href="https://deca.is.tue.mpg.de/">DECA</a>, <a
+            href="https://insightface.ai/arcface">Arcface</a>, <a href="https://diff-ae.github.io/">DiffAE</a>, and <a
+            href="https://github.com/ycszen/BiSeNet/blob/master/README.md">BiSeNet</a>) to encode each training image
+          into
+          encodings of light, shape, camera, face embedding, shadow scalar, and background image, and train a <a
+            href="https://arxiv.org/abs/2010.02502">DDIM</a>
+          decoder conditioned on these encodings. To relight an input face image, we reverse the generative process of
+          the DDIM conditioned on the encodings of the input image to obtain xT. Then, we modify the light encoding and
+          decode xT back to a relit output.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <img class="overview" src="./files/new_content/image/difareli++_pp.png" style="width: 1100px; max-width: 100%;">
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <div class="container" style="max-width: 930px;">
+    <div class="row">
+      <div class="col-md-12">
         <h2> Relighting with Consistent Cast Shadows </h2>
         <p>
-          Our method, DiFaReli++<sub>ss</sub>, effectively handles input with strong shadows and highlights, achieving the most consistent cast shadows and realistic relighting among four state-of-the-art methods across various subjects with different head poses and lighting conditions.
+        We present relighting results featuring diverse lighting paths. These input images contain existing strong highlights and cast shadows, a wide range of head poses, or facial makeup and accessories. 
+        On the left, we visualize the approximate location of the dominant light source, where the size of the red circle represents the area of the light source. Smaller areas produce sharper cast shadows, while larger areas create more diffuse appearances.
+        </p>
+      </div>
+    </div>
+    <div class="container" style="width:130%;">
+      <div class="row">
+        <div class="slide-container swiper" style="margin-left: -125px;">
+            <div style="max-width: auto; margin: auto">
+              <div class="flex-container_cs">
+                <div class="grid-input">
+                  <div class="label" style="padding-left: 100px;padding-right:65px">Target lighting</div>
+                </div>
+                <div class="grid-labels2">
+                  <div class="label">Input</div>
+                  <div class="label">Relit</div>
+                  <div class="label">Input</div>
+                  <div class="label">Relit</div>
+                </div>
+              </div>
+            </div>
+          <div class="slide-content s4">
+            <div class="card-wrapper swiper-wrapper">
+              <div class="card swiper-slide">
+                <div class="row-gg g-0 justify-content-center">
+                </div>
+                <div class="row-gg g-0 justify-content-center d-flex align-items-center">
+                  <video class="mx-auto d-block vidrot" height="600px" autoplay muted loop>
+                    <source src="./files/new_content/fancy/grid0.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+              <div class="card swiper-slide">
+                <div class="row-gg g-0 justify-content-center">
+                </div>
+                <div class="row-gg g-0 justify-content-center d-flex align-items-center">
+                  <video class="mx-auto d-block vidrot" height="600px" autoplay muted loop>
+                    <source src="./files/new_content/fancy/grid1.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+              <div class="card swiper-slide">
+                <div class="row-gg g-0 justify-content-center">
+                </div>
+                <div class="row-gg g-0 justify-content-center d-flex align-items-center">
+                  <video class="mx-auto d-block vidrot" height="600px" autoplay muted loop>
+                    <source src="./files/new_content/fancy/grid2.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+              <div class="card swiper-slide">
+                <div class="row-gg g-0 justify-content-center">
+                </div>
+                <div class="row-gg g-0 justify-content-center d-flex align-items-center">
+                  <video class="mx-auto d-block vidrot" height="600px" autoplay muted loop>
+                    <source src="./files/new_content/fancy/grid3.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <div class="container" style="max-width: 930px;">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <h2> Relighting under moving light conditiongs </h2> -->
+        <h2> Baseline Comparisons </h2>
+        <p>
+          <!-- Our method, DiFaReli++<sub>ss</sub>, effectively handles input with strong shadows and highlights, achieving the most consistent cast shadows and realistic relighting among four state-of-the-art methods across various subjects with different head poses and lighting conditions. -->
+          Our method effectively handles input with strong shadows and highlights, achieving the most consistent cast shadows and realistic relighting among four state-of-the-art methods across various subjects with different head poses and lighting conditions.
         </p>
         <p>
           The shadow map and shading reference are provided in the rightmost column (Cond.).
@@ -308,84 +413,97 @@
   </div>
 
   <hr class="divider">
-  <div class="container" style="max-width: 900px;">
+  <div class="container" style="max-width: 930px;" id="sec_shadow">
     <div class="row">
       <div class="col-md-12">
-        <h2> Additional Relighting Results </h2>
+        <h2>Shadow manipulation</h2>
         <p>
-        We present additional relighting results featuring diverse lighting paths. These input images contain existing strong highlights and cast shadows, a wide range of head poses, or facial makeup and accessories. 
-        On the left, we visualize the approximate location of the dominant light source, where the size of the red circle represents the area of the light source. Smaller areas produce sharper cast shadows, while larger areas create more diffuse appearances.
+          <!-- As mentioned in "Experiment Section V.D – Shadow Flag Condition" of our main paper, we demonstrate the same capability as DiFaReli in strengthening and attenuating cast shadows on the face. -->
+          We can adjust the intensity of cast shadows by modifying the shadow map values.
+          Our method can effectively handle shadows cast by facial features (e.g., nose, cheeks, brow ridge), eyeglasses, and hats, making the face appear more diffuse.
         </p>
       </div>
     </div>
-    <div class="container" style="width:130%;">
-      <div class="row">
-        <div class="slide-container swiper" style="margin-left: -125px;">
-            <div style="max-width: auto; margin: auto">
-              <div class="flex-container_cs">
-                <div class="grid-input">
-                  <div class="label" style="padding-left: 100px;padding-right:65px">Target lighting</div>
-                </div>
-                <!-- Second grid for the other labels -->
-                <div class="grid-labels2">
-                  <div class="label">Input</div>
-                  <div class="label">Relit</div>
-                  <div class="label">Input</div>
-                  <div class="label">Relit</div>
-                </div>
-                <!-- <div class="grid-input">
-                  <div class="label" style="padding-left: 15px;">Cond.</div>
-                </div> -->
-              </div>
+    <div class="col-sm">
+      <div class="show_when_small" style="text-align: center; color: red">
+        Open this website on a desktop to see animated results!
+      </div>
+      <div class="row justify-content-center hide_when_small">
+        <div class="col-md-auto">
+          <center>
+            <p style="font-size: small; margin-bottom: 0px;">
+              Move the slider to animate the results.
+            </p>
+          </center>
+          <div class="slider">
+            <div class="slider_circle">
+              <div class="slider_right"> </div>
             </div>
-          <div class="slide-content s4">
-            <div class="card-wrapper swiper-wrapper">
-              <div class="card swiper-slide">
-                <div class="row-gg g-0 justify-content-center">
-                  <!-- <center>
-                    <p class="lessbottom"> We rotate the light while gradually decreasing the cast shadow intensity.
-                    </p>
-                  </center> -->
-                </div>
-                <div class="row-gg g-0 justify-content-center d-flex align-items-center">
-                  <video class="mx-auto d-block vidrot" height="600px" autoplay muted loop>
-                    <source src="./files/new_content/fancy/grid0.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-              <div class="card swiper-slide">
-                <div class="row-gg g-0 justify-content-center">
-                </div>
-                <div class="row-gg g-0 justify-content-center d-flex align-items-center">
-                  <video class="mx-auto d-block vidrot" height="600px" autoplay muted loop>
-                    <source src="./files/new_content/fancy/grid1.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-              <div class="card swiper-slide">
-                <div class="row-gg g-0 justify-content-center">
-                </div>
-                <div class="row-gg g-0 justify-content-center d-flex align-items-center">
-                  <video class="mx-auto d-block vidrot" height="600px" autoplay muted loop>
-                    <source src="./files/new_content/fancy/grid2.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-              <div class="card swiper-slide">
-                <div class="row-gg g-0 justify-content-center">
-                </div>
-                <div class="row-gg g-0 justify-content-center d-flex align-items-center">
-                  <video class="mx-auto d-block vidrot" height="600px" autoplay muted loop>
-                    <source src="./files/new_content/fancy/grid3.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-button-next swiper-navBtn"></div>
-            <div class="swiper-button-prev swiper-navBtn"></div>
-            <div class="swiper-pagination"></div>
           </div>
         </div>
+        <div class="col-md-auto" style="padding-left: 0px;">
+          <button class="slider_toggle"><i class="fa fa-pause"></i></button>
+        </div>
+      </div>
+
+      <div class="slide-container swiper">
+        <div style="max-width: 640px; margin: auto">
+          <div class="flex-container justify-content-center">
+            <div class="label">
+              Softer
+            </div>
+            <div class="label">
+              <-- Shadows -->
+            </div>
+            <div class="label">
+              Stronger
+            </div>
+            <div class="label hide_when_small">
+              Animated
+            </div>
+          </div>
+        </div>
+
+        <div id="s2" class="slide-content">
+          <div class="card-wrapper swiper-wrapper inner-content">
+          </div>
+
+          <div class="swiper-button-next swiper-navBtn"></div>
+          <div class="swiper-button-prev swiper-navBtn"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="divider">
+  <div class="container" style="max-width: 900px;">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Citation</h2>
+        <code>
+          <!-- @article{...,<br>
+          &nbsp; author = {...},<br>
+          &nbsp; title = {Diffusion Face Relighting},<br>
+          &nbsp; journal = {arXiv},<br>
+          &nbsp; year = {2022},<br>
+          } -->
+          <!-- @misc{ponglertnapakorn2023difareli,<br>
+          &nbsp; title={DiFaReli: Diffusion Face Relighting}, <br>
+          &nbsp; author={Puntawat Ponglertnapakorn and Nontawat Tritrong and Supasorn Suwajanakorn},<br>
+          &nbsp; year={2023},<br>
+          &nbsp; eprint={2304.09479},<br>
+          &nbsp; archivePrefix={arXiv},<br>
+          &nbsp; primaryClass={cs.CV}<br>
+          } -->
+          @InProceedings{ponglertnapakorn2023difareli,<br>
+          &nbsp; title={DiFaReli: Diffusion Face Relighting},<br>
+          &nbsp; author={Ponglertnapakorn, Puntawat and Tritrong, Nontawat and Suwajanakorn, Supasorn},<br>
+          &nbsp; journal={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},<br>
+          &nbsp; year={2023}<br>
+          }</code>
       </div>
     </div>
   </div>
