@@ -40,7 +40,7 @@ function setup_slider(top_div_id, folder, s1, s2) {
 
   for (let i = 0; i < pages; i++) {
     let newpage = $(`<div class="card swiper-slide">`);
-    newpage.append($(`<img class="show_when_small" src='/files/new_content/${folder}/${i+1}.jpg'>`));
+    newpage.append($(`<img class="show_when_small" src='/files/new_content/${folder}/${i+1}.png'>`));
 
     for (let j = 0; j < results_per_page; j++) {
       newpage.append(

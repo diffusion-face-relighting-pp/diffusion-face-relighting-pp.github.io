@@ -60,10 +60,6 @@ body{
 	height:100%;
 }
 
-.show_when_small {
-  display: none;
-}
-
 
 .table_label {
   position: relative;
@@ -509,6 +505,14 @@ h6 {
 
 .citation .conference.arxiv {
     background-color: Gainsboro;
+}
+
+.show_when_small {
+  display: none;
+}
+
+@media screen and (max-width: 1200px){
+
 }
 
 @media only screen and (max-width: 600px) {
