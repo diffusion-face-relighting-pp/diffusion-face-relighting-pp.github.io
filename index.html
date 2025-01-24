@@ -205,9 +205,10 @@
           <li>Solves highly challenging scenarios like cast shadows, strong highlights, unusual makeups, and facial
             accessories.</li>
           <li>Bypasses the need for <em>accurate</em> intrinsic estimation of 3D shape, albedo, or lighting, yet
-            produces realistic results.</li>
+            produces realistic results with temporally consistent cast shadows.</li>
           <li>Only requires 2D images to train. No need for any multiview images, relit pairs, 3D or lighting ground
             truth! </li>
+          <!-- <li>A simple distillation technique enables DiFaReli++<sub>ss</sub> to significantly speed up the diffusion-based DiFaReli++ once given pre-processed data.</li> -->
         </ol>
         <br>
         </div>
@@ -230,10 +231,12 @@
         </p>
         <p>
           In particular, we use off-the-shelf estimators (<a href="https://deca.is.tue.mpg.de/">DECA</a>, <a
-            href="https://insightface.ai/arcface">Arcface</a>, <a href="https://diff-ae.github.io/">DiffAE</a>, and <a
+            href="https://insightface.ai/arcface">Arcface</a>, and <a
             href="https://github.com/ycszen/BiSeNet/blob/master/README.md">BiSeNet</a>) to encode each training image
-          into
-          encodings of light, shape, camera, face embedding, shadow scalar, and background image, and train a <a
+          into encodings of light, shape, camera, face embedding, and segmentation masks. 
+          Additionally, we infer a shadow map using a novel <a href="https://diffusion-face-relighting.github.io/">DiFaReli</a>-based technique incoporating <a href='https://diff-ae.github.io/'>DiffAE</a>.
+          
+          We then train a <a
             href="https://arxiv.org/abs/2010.02502">DDIM</a>
           decoder conditioned on these encodings. To relight an input face image, we reverse the generative process of
           the DDIM conditioned on the encodings of the input image to obtain xT. Then, we modify the light encoding and
