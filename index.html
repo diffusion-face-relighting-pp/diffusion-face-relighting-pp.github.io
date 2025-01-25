@@ -47,9 +47,9 @@
   <link rel="stylesheet" href="./files/Highlight-Clean.css">
   <link rel="stylesheet" href="./files/styles.css">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="./files/content/logo/tab.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./files/content/logo/tab.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./files/content/logo/tab.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./files/new_content/logo/tab.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./files/new_content/logo/tab.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./files/new_content/logo/tab.png">
 
   <script src="./files/video_comparison.js.download"></script>
   <script type="module" src="./files/model-viewer.min.js.download"></script>
@@ -95,7 +95,7 @@
       : Diffusion Face Relighting
       </h1>
   </div>
-  <div class="text-container-shadow" style="margin-top: -20px; margin-bottom: -20px;">
+  <div class="text-container-shadow" style="margin-top: -20px; margin-bottom: -5px;">
         <h1 style="font-weight: bold;">
       <span class="shadow-text">with Consistent Cast Shadows</span>
       with Consistent Cast Shadows
@@ -154,12 +154,11 @@
       </div>
     </div>
 
-    <div class="highlight-clean" style="padding-bottom: 10px; margin-top:-50px">
-    <div class="container" style="max-width: 1000px;">
+    <div class="highlight-clean" style="padding-bottom: 10px; margin-top:-50px; text-align:center;">
+    <div class="container" style="max-width: 1200px;">
     <div class="row">
       <div class="col-md-12 text-center">
-        <!-- <img class="teaser" src="./files/content/image/teaser-1.png" style="max-width: 1300px"> -->
-        <img class="teaser" src="./files/new_content/image/teaser.jpg" style="max-width: 1200px; width: 95%">
+        <img class="teaser" src="./files/new_content/image/teaser.jpg" style="max-width: 1200px; width: 110%">
       </div>
     </div>
 
@@ -171,8 +170,8 @@
           </path>
         </svg>Paper
       </a>
-      <a class="btn btn-light mybtn" role="button" href="https://github.com/">
-        <img src="./files/new_content/image/github-mark.png" alt="GitHub Logo" style="margin-right: 13px; margin-left: -10px; width: 25px;">Code
+      <a class="btn btn-light mybtn disabled" role="button" href="https://github.com/" style="background-color: #f0f0f0;">
+        <img src="./files/new_content/image/github-mark.png" alt="GitHub Logo" style="margin-right: 13px; margin-left: -10px; width: 25px;">Code (coming soon)
       </a>
     </div>
 
@@ -208,7 +207,8 @@
             produces realistic results with temporally consistent cast shadows.</li>
           <li>Only requires 2D images to train. No need for any multiview images, relit pairs, 3D or lighting ground
             truth! </li>
-          <!-- <li>A simple distillation technique enables DiFaReli++<sub>ss</sub> to significantly speed up the diffusion-based DiFaReli++ once given pre-processed data.</li> -->
+          <li></li>
+          <li>A simple distillation technique enables DiFaReli++<sub>ss</sub> to significantly speed up the diffusion-based DiFaReli++ once given pre-processed data.</li>
         </ol>
         <br>
         </div>
@@ -265,15 +265,32 @@
       </div>
     </div>
     <div class="container" style="width:130%;">
-      <div class="show_when_small" style="text-align: center; color: red">
-        Open this website on a desktop to see more results!
+      <!-- <div class="show_when_small_vid rot_con_show" style="text-align: center; color: red"> -->
+      <div class="rot_con_show">
+        <div class="row" style="text-align: center; color: red">
+          Open this website on a desktop to see more results!
+        </div>
+          <div style="max-width: auto; margin: auto; flex-wrap: wrap;">
+            <!-- <div class="grid-input">
+              <div class="label-small" style="padding-left: 100px;padding-right:65px">Target lighting</div>
+            </div> -->
+            <!-- <div class="grid-labels2"> -->
+            <!-- <div class="flex-container justify-content-center"> -->
+            <div class="grid-labels3" style="margin-left: 100px;">
+              <div class="label-small">Target lighting</div>
+              <div class="label-small">Input</div>
+              <div class="label-small">Relit</div>
+            </div>
+          </div>
         <div class="row-gg g-0 justify-content-center d-flex align-items-center">
-          <video class="mx-auto d-block vidrot" height="320px" autoplay muted loop>
-            <source src="./files/new_content/fancy/grid0.mp4" type="video/mp4">
+          <!-- <video class="mx-auto d-block vidrot" height="320px" autoplay muted loop> -->
+          <video class="mx-auto d-block vidrot" width="70%" autoplay muted loop>
+            <source src="./files/new_content/fancy/grid_small0.mp4" type="video/mp4">
           </video>
         </div>
       </div>
-      <div class="row hide_when_small">
+      <!-- <div class="row hide_when_small rot_con_hide"> -->
+      <div class="row rot_con_hide">
         <div class="slide-container swiper" style="margin-left: -125px;">
             <div style="max-width: auto; margin: auto">
               <div class="flex-container_cs">
@@ -353,17 +370,34 @@
     </div>
 
     <div class="container" style="width:130%;">
-      <div class="show_when_small" style="text-align: center; color: red">
-        Open this website on a desktop to see more results!
-        <div class="row-gg g-0 justify-content-center d-flex align-items-center">
-          <img src="./files/new_content/compare_cs/grid0_inp.jpg" height="320px" style="margin-right: 2px;">
-          <video class="mx-auto d-block vidrot" height="320px" autoplay muted loop>
-            <source src="./files/new_content/compare_cs/grid0.mp4" type="video/mp4">
+      <div class="show_when_small_cmp" style="text-align: center; color: red">
+        Open this website on a desktop to see more comparisions and results!
+        <!-- <div class="row-gg g-0 justify-content-center d-flex align-items-center" style="max-width: 900px;"> -->
+        <div style="max-width: 640px; margin: auto">
+          <!-- <div class="flex-container justify-content-center" style="font-size: 3vw;"> -->
+          <div class="flex-container justify-content-center">
+            <div class="label-small" style="margin-left:92px;margin-right:21px;">
+              Input
+            </div>
+            <div class="label-small" style="margin-right: 26px;">
+              DiFaReli
+            </div>
+            <div class="label-small">
+              DiFaReli++<sub>ss</sub>
+            </div>
+            <div class="label-small" style="margin-right: 60px;">
+              Cond.
+            </div>
+          </div>
+        </div>
+        <div class="row-gg g-0 justify-content-center d-flex align-items-center" style="max-width: 900px;">
+          <video class="mx-auto d-block vidrot-small" autoplay muted loop>
+            <source src="./files/new_content/compare_cs/grid_small0.mp4" type="video/mp4">
           </video>
         </div>
       </div>
 
-      <div class="row hide_when_small">
+      <div class="row hide_when_small_cmp">
         <div class="slide-container swiper" style="margin-left: -125px;">
             <div style="max-width: auto; margin: auto">
               <div class="flex-container_cs">
@@ -435,7 +469,7 @@
         <p>
           <!-- As mentioned in "Experiment Section V.D – Shadow Flag Condition" of our main paper, we demonstrate the same capability as DiFaReli in strengthening and attenuating cast shadows on the face. -->
           We can adjust the intensity of cast shadows by modifying the shadow map values.
-          Our method can effectively handle shadows cast by facial features (e.g., nose, cheeks, brow ridge), eyeglasses, and hats, making the face appear more diffuse.
+          Our method can effectively handle shadows cast by facial features (e.g., nose, cheeks, brow ridge), eyeglasses, and hats, making the face appear more diffuse or with more intense shadows.
         </p>
       </div>
     </div>
@@ -492,27 +526,12 @@
     </div>
   </div>
 
-
-  <hr class="divider">
-  <div class="container" style="max-width: 900px;">
+  <!-- <hr class="divider"> -->
+  <!-- <div class="container" style="max-width: 900px;">
     <div class="row">
       <div class="col-md-12">
         <h2>Citation</h2>
         <code>
-          <!-- @article{...,<br>
-          &nbsp; author = {...},<br>
-          &nbsp; title = {Diffusion Face Relighting},<br>
-          &nbsp; journal = {arXiv},<br>
-          &nbsp; year = {2022},<br>
-          } -->
-          <!-- @misc{ponglertnapakorn2023difareli,<br>
-          &nbsp; title={DiFaReli: Diffusion Face Relighting}, <br>
-          &nbsp; author={Puntawat Ponglertnapakorn and Nontawat Tritrong and Supasorn Suwajanakorn},<br>
-          &nbsp; year={2023},<br>
-          &nbsp; eprint={2304.09479},<br>
-          &nbsp; archivePrefix={arXiv},<br>
-          &nbsp; primaryClass={cs.CV}<br>
-          } -->
           @InProceedings{ponglertnapakorn2023difareli,<br>
           &nbsp; title={DiFaReli: Diffusion Face Relighting},<br>
           &nbsp; author={Ponglertnapakorn, Puntawat and Tritrong, Nontawat and Suwajanakorn, Supasorn},<br>
@@ -521,7 +540,7 @@
           }</code>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <hr class="divider">
   <div class="container" style="max-width: 900px;">
@@ -551,14 +570,14 @@
   <script src="./files/webflow.fd002feec.js.download"></script>
 
   <!-- Import the component -->
-  <!-- <div class="end" style="margin-top: 30px;">
+  <div class="end" style="margin-top: 30px;">
     <div style="text-align: center;">
-      <a href="https://vistec.ist/vision" target="_blank"><img src="./files/content/logo/vll_logo.png"
+      <a href="https://vistec.ist/vision" target="_blank"><img src="./files/new_content/logo/vll_logo.png"
           style="width: 130px; display: inline; margin: 0 100px;"></a>
-      <a href="https://vistec.ist/" target="_blank"><img src="./files/content/logo/vistec_logo.png"
+      <a href="https://vistec.ist/" target="_blank"><img src="./files/new_content/logo/vistec_logo.png"
           class="vistec-offset" style="width: 130px; display: inline; margin: 0 100px; position:relative; "></a>
-    </div> -->
-  <!-- </div> -->
+    </div>
+  </div>
 
 </body>
 <!-- Swiper JS -->

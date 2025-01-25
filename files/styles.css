@@ -24,11 +24,11 @@ body{
     position: absolute;
     top: 17px; /* Places shadow directly under the text */
     background-color: transparent;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.4);
     transform-origin: bottom center; /* Ensures rotation happens from the top of the shadow */
     transform: rotateX(45deg) skewX(-20deg);
     z-index: -1;
-    filter: blur(2px);
+    filter: blur(2.5px);
     animation: shadowRotate 7s infinite alternate linear;
 }
 
@@ -511,8 +511,71 @@ h6 {
   display: none;
 }
 
-/* @media screen and (max-width: 1200px){
-} */
+.show_when_small_vid {
+  display: none;
+}
+
+.show_when_small_cmp {
+  display: none;
+}
+
+.hide_when_small_cmp {
+  display: none;
+}
+
+.rot_con {
+  display: none;
+}
+
+@media only screen and (min-width: 1200px){
+  .rot_con_show {
+    display: none;
+  }
+  .rot_con_hide {
+    display: block;
+  }
+
+  .show_when_small_cmp {
+    display: none;
+  }
+  .hide_when_small_cmp {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 780px) and (max-width: 1199px){
+  .label-small {
+     font-size: 20px;
+  }
+  .grid-labels3 {
+    grid-template-columns: repeat(3, 250px); /* Adjust width dynamically */
+    gap: 100px;
+  }
+}
+
+@media only screen and (max-width: 1199px){
+  .rot_con_show {
+    display: block;
+  }
+  .rot_con_hide {
+    display: none;
+  }
+
+
+  .show_when_small_cmp {
+    display: block;
+  }
+  .hide_when_small_cmp {
+    display: none;
+  }
+  .grid-labels2 {
+    grid-template-columns: repeat(4, minmax(10px, 1fr)); /* Switch to 2 columns on small screens */
+  }
+  .grid-labels3 {
+    grid-template-columns: repeat(3, minmax(150px, 1fr)); /* Adjust width dynamically */
+    gap: -10px;
+  }
+}
 
 @media only screen and (max-width: 600px) {
     .news,
@@ -568,6 +631,7 @@ h6 {
   padding: 11px 25px !important;
   /* font-weight: normal !important; */
 }
+
 .vistec {
   font-size: 21px;
   color: #6c6c6c;
@@ -787,9 +851,8 @@ hr.divider_intra {
 
 .btn-light.disabled {
     /* border: 2px black; */
-    background-color: #ccc;
+    background-color: #7c3333;
 }
-
 
 /* Gallery */
 .video-gallery {
@@ -1160,6 +1223,16 @@ model-viewer .controls {
   font-size: 18px;
 }
 
+.label-small {
+  flex: 1;
+  text-align: center;
+}
+
+.label-small2 {
+  flex: 1;
+  text-align: center;
+}
+
 .label-ours {
   flex: 1;
   text-align: center;
@@ -1170,6 +1243,10 @@ model-viewer .controls {
 @media screen and (max-width: 780px) {
   .label {
      font-size: 3vw;
+  }
+
+  .label-small {
+     font-size: 2.5vw;
   }
 }
 .grid-input {
@@ -1187,6 +1264,12 @@ model-viewer .controls {
 .grid-labels2 {
   display: grid;
   grid-template-columns: repeat(4, 200px); /* Each label aligns with a 256px image column */
+  text-align: center;
+}
+
+.grid-labels3 {
+  display: grid;
+  grid-template-columns: repeat(3, 150px); /* Each label aligns with a 256px image column */
   text-align: center;
 }
 
@@ -1286,4 +1369,12 @@ button {
 .row-gg {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.vidrot-small {
+    width: 100%;
+    max-width: 70%; /* Adjust max width if needed */
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
